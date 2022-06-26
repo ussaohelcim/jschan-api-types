@@ -1,7 +1,12 @@
 export interface IReply {
     date: string;
     name: string;
-    country: {} | null;
+    country: {
+        code:string
+        name:string
+        src:string|undefined
+        custom:boolean|undefined
+    } | null;
     board: string;
     tripcode: string | null;
     capcode: string | null;
@@ -70,7 +75,7 @@ export interface INewPost {
      */
     postpassword?: string;
     /**
-     * One or more files, multipart form data.
+     * One or more files, multipart form data. Use fs.createReadStream(filepath).
      */
     file?: any;
     /**
