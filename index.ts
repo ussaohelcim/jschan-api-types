@@ -96,3 +96,31 @@ interface INewPost{
 	 */
 	captcha?:number[]|string
 }
+
+interface IBoard{
+	_id:string
+	tags:string[]
+	sequence_value:number
+	pph:number
+	ppd:number
+	ips:number
+	lastPostTimestamp:{
+		text:string
+		color:string
+	}
+	webring:boolean
+	settings:{
+		name:string
+		description:string
+		sfw:boolean
+		unlistedLocal:boolean
+	}
+}
+
+interface IOverboard extends IThread{
+	threads:{
+		previewbacklinks:[]
+		omittedfiles:number
+		omittedposts:number
+	}[]
+}
