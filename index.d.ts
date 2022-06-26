@@ -72,7 +72,7 @@ export interface INewPost {
     /**
      * One or more files, multipart form data.
      */
-    file?: FormData;
+    file?: any;
     /**
      * Array of sha256 hash of files to be spoilered.
      */
