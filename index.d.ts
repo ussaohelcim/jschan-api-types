@@ -113,10 +113,13 @@ export interface IBoard {
         unlistedLocal: boolean;
     };
 }
-export interface IOverboard extends IThread {
-    threads: {
-        previewbacklinks: [];
-        omittedfiles: number;
-        omittedposts: number;
-    }[];
+
+interface IThreadOverboard extends IThread{
+    previewbacklinks: [];
+    omittedfiles: number;
+    omittedposts: number;
+}
+
+export interface IOverboard {
+    threads:IThreadOverboard[] 
 }
