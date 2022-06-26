@@ -1,0 +1,15 @@
+{
+  "name": "jschan-api-types",
+  "version": "1.0.0",
+  "description": "Interface types for the jschan api.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ussaohelcim/jschan-api-types.git"
+  },
+  "author": "ussaohelcim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ussaohelcim/jschan-api-types/issues"
+  },
+  "homepage": "https://github.com/ussaohelcim/jschan-api-types#readme"
+}
