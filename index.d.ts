@@ -1,4 +1,4 @@
-interface IReply {
+export interface IReply {
     date: string;
     name: string;
     country: {} | null;
@@ -43,7 +43,7 @@ interface IReply {
     }[] | [];
     postId: number;
 }
-interface IThread extends IReply {
+export interface IThread extends IReply {
     thread: null;
     replyposts: number;
     replyfiles: number;
@@ -53,7 +53,7 @@ interface IThread extends IReply {
     bumped: string;
     replies: IReply[] | [];
 }
-interface INewPost {
+export interface INewPost {
     /**
      * Use null to create a new thread, or the thread number to create a reply
      */
@@ -94,7 +94,7 @@ interface INewPost {
      */
     captcha?: number[] | string;
 }
-interface IBoard {
+export interface IBoard {
     _id: string;
     tags: string[];
     sequence_value: number;
@@ -113,7 +113,7 @@ interface IBoard {
         unlistedLocal: boolean;
     };
 }
-interface IOverboard extends IThread {
+export interface IOverboard extends IThread {
     threads: {
         previewbacklinks: [];
         omittedfiles: number;
