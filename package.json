@@ -11,5 +11,6 @@
   "bugs": {
     "url": "https://github.com/ussaohelcim/jschan-api-types/issues"
   },
-  "homepage": "https://github.com/ussaohelcim/jschan-api-types#readme"
+  "homepage": "https://github.com/ussaohelcim/jschan-api-types#readme",
+  "types": "./index.d.ts"
 }
