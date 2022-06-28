@@ -128,3 +128,7 @@ interface IThreadOverboard extends IThread{
 export interface IOverboard {
     threads:IThreadOverboard[] 
 }
+
+export interface IBoardList{
+    boards:IBoard[]
+}
