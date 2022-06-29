@@ -143,7 +143,6 @@ export interface IPostAction{
      */
     captcha:number[]|string
 }
-
 export interface IThread extends IPost {
     thread: null;
     replyposts: number;
@@ -181,10 +180,12 @@ interface IThreadOverboard extends IThread{
     omittedposts: number;
 }
 
-export interface IOverboard {
+export interface IOverboardIndex {
     threads:IThreadOverboard[] 
 }
-
+export interface IOverboardCatalog{
+    threads:IPost[] 
+}
 export interface IBoardList{
     boards:IBoard[]
 }
@@ -215,41 +216,9 @@ export interface IPost{
     message: string;
     messagehash: string;
     nomarkup: string;
-    thread: number | null;
-    email: string;
-    spoiler: boolean;
-    userId: string | null;
-    files: IFile[] | [];
-    quotes: {
-        thread: number;
-        postId: number;
-    }[] | [];
-    crossquotes: [];
-    backlinks: {
-        postId: number;
-    }[] | [];
-    postId: number;
-}
-
-/**
- * @deprecated Use IPost
- */
- export interface IReply {
-    date: string;
-    name: string;
-    country: {
-        code:string
-        name:string
-        src:string|undefined
-        custom:boolean|undefined
-    } | null;
-    board: string;
-    tripcode: string | null;
-    capcode: string | null;
-    subject: string | null;
-    message: string;
-    messagehash: string;
-    nomarkup: string;
+    /**
+     * Thread null means OP.
+     */
     thread: number | null;
     email: string;
     spoiler: boolean;
