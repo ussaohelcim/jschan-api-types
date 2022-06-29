@@ -1,22 +1,28 @@
 export interface IFile{
-    filename: string;
     spoiler: boolean;
     hash: string;
+    filename: string;
     originalFilename: string;
     mymetype: string;
-    size: number;
     extension: string;
-    phash: string;
+    size: number;
     sizeString: string;
+    phash?: string;
+    duration?: number;
+    durationString?:string
     thumbextension: string;
     geometry: {
         width: number;
         height: number;
         thumbwidth: number;
         thumbheight: number;
-        geometryString: string;
-        hasThumb: boolean;
     }
+    geometryString: string;
+    hasThumb: boolean;
+    /**
+     * Whether the file is an "attachment" type, a file that is not an image, video or audio.
+     */
+    attachment:boolean;
 }
 
 export interface IBoardQuery{
@@ -138,7 +144,7 @@ export interface IPostAction{
     captcha:number[]|string
 }
 
-export interface IThread extends IReply {
+export interface IThread extends IPost {
     thread: null;
     replyposts: number;
     replyfiles: number;
@@ -146,7 +152,7 @@ export interface IThread extends IReply {
     bumplocked: number;
     cyclic: number;
     bumped: string;
-    replies: IReply[] | [];
+    replies: IPost[] | [];
 }
 
 export interface IBoard {
@@ -183,15 +189,17 @@ export interface IBoardList{
     boards:IBoard[]
 }
 
+export interface ICountry{
+    code:string
+    name:string
+    src:string|undefined
+    custom:boolean|undefined
+}
+
 export interface IPost{
     date: string;
     name: string;
-    country: {
-        code:string
-        name:string
-        src:string|undefined
-        custom:boolean|undefined
-    } | null;
+    country: ICountry | null;
     ip?:{
         raw:string
         cloak:string
@@ -256,4 +264,12 @@ export interface IPost{
         postId: number;
     }[] | [];
     postId: number;
+}
+
+export interface IFilter{
+    flag?:ICountry
+    name?:string
+    subject?:string
+    tripcode?:string
+    message?:string
 }
