@@ -41,7 +41,7 @@ export interface IBoardQuery{
     /**
      * If ``true``, put local sites grouped before webring sites. Sort and direction for local and webring sites will be independent.
      */
-    local_first?: boolean
+    local_first?: 'false'|'true'
     /**
      * Sites to include by siteName, can be repeated to include multiple sites. Blank includes all sites.
      */
@@ -49,14 +49,14 @@ export interface IBoardQuery{
     /**
      * Page number. 30 per page. Blank is first page. Page numbering starts at 1. Included in all responses is maxPage.
      */
-    page?:number
+    page?:string
 }
 
 export interface IOverboardQuery{
     /**
      * 	Whether to include boards that are publicly listed and by default appear on the overboard. If not ``true`` and the add_boards parameter is empty, this will be ignored and default to true (otherwise you are asking for an overboard view of no boards).
      */
-    include_default?:boolean
+    include_default?:'false'|'true'
     /**  Additional boards to fetch threads from. Can be repeated for multiple boards.*/
     add?:string
     /** Boards to remove from the default board list if include_detault is true. Can be repeated for multiple boards. */
