@@ -125,7 +125,7 @@ export interface IPostAction{
     /**
      * Password for anonymous users, the same one used to create the posts.
      */
-    postpassword:string
+    postpassword?:string
     /**
      * Report the selected posts to board staff.
      */
@@ -141,7 +141,7 @@ export interface IPostAction{
     /**
      * 
      */
-    captcha:number[]|string
+    captcha?:number[]|string
 }
 export interface IThread extends IPost {
     thread: null;
