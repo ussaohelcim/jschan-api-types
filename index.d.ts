@@ -141,7 +141,7 @@ export interface IPostAction{
     /**
      * 
      */
-    captcha?:number[]|string
+    captcha:number[]|string
 }
 export interface IThread extends IPost {
     thread: null;
